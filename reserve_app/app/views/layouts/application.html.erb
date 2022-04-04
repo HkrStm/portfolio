@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReserveApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-content">
+        <h1><%= link_to "宿泊アプリ", "/", class: "nav-link" %></h1>
+        <div class="search-outer">
+          <%= form_tag("/rooms", method: :get) do %>
+            <%= text_field_tag :search, "", {class: "input"} %>
+            <%= submit_tag "検索" %>
+          <% end %>
+        </div>
+      </div>
+      <nav>
+        <ul class="header-nav">
+          <% if current_user.present? %>
+            <%= link_to(edit_user_registration_path, class:"user-link") do %>
+              <li class="user-info">
+                <div>
+                  <% if current_user.user_icon? %>
+                    <%= image_tag current_user.user_icon.url, class:"user-icon" %>
+                  <% else %>
+                    <img src="/assets/default.png" class="user-icon" alt="ユーザーアイコン" %>
+                  <% end %>
+                </div>
+                <p><%= current_user.username %>さん</p>
+              </li>
+            <% end %>
+          <% end %>
+          <li><%= link_to "ルーム一覧", rooms_path, class: "nav-content nav-link" %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "ルーム登録", new_room_path, class: "nav-content nav-link" %></li>
+            <li><%= link_to "予約一覧", reservations_path, class: "nav-content nav-link" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-content nav-link" %></li>
+          <% else %>
+            <li><%= link_to "ログイン", new_user_session_path, class: "nav-content nav-link" %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "nav-content nav-link" %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <p class="form-error"><%= notice %></p>
+    <p class="form-error"><%= alert %></p>
+
+    <%= yield %>
+    
+  </body>
+</html>

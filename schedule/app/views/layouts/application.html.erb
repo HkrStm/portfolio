@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Schedule</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>スケジュール管理アプリ</h1>
+      <%= link_to("新規作成", new_post_path, class:"new_link") %>
+    </header>
+    <div class="blank"></div>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+      <div class="blank"></div>
+    <% end %>
+    
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+      
+      <div class="side">
+        <ul class="schedule_link_list">
+          <li>
+            <%= link_to("Today", "/posts/today", class:"link") %>
+          </li>
+          <li>
+            <%= link_to("Tomorrow", "/posts/tomorrow", class:"link") %>
+          </li>
+          <li>
+            <%= link_to("All", posts_path, class:"link") %>
+          </li>
+        </ul>
+      </div>
+    </main>
+    
+    <div class="blank"></div>
+    <footer>
+      <div id="total">スケジュール合計：<%= @count %></div>
+      <div id="show_date"><%= @date %></div>
+    </footer>
+  </body>
+</html>

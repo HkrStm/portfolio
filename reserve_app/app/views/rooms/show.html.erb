@@ -1,0 +1,41 @@
+<h2>ルーム詳細</h2>
+
+<div class="outer">
+  <div class="image-box">
+    <%= image_tag @room.room_image.url, class:"room-image" %>
+  </div>
+  <table>
+    <tr>
+      <th>ルーム名</th>
+      <td class="show-table">
+        <%= @room.room_name %>
+      </td>
+    </tr>
+    <tr>
+      <th>紹介</th>
+      <td class="show-table">
+        <%= @room.introduction %>
+      </td>
+    </tr>
+    <tr>
+      <th>料金</th>
+      <td class="show-table">
+        <%= @room.fee %>
+      </td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td class="show-table">
+        <%= @room.address %>
+      </td>
+    </tr>
+  </table>
+  <div class="operation-box">
+    <% if @room.user_id == current_user.id %>
+      <%= link_to("編集", edit_room_path(@room.id), class:"link") %>
+      <%= link_to("削除", room_path(@room.id), method: :delete, class:"link") %>
+    <% else %>
+      <%= link_to("この部屋を予約する", new_reservation_path(take_params), class:"link") %>
+    <% end %>
+  </div>
+</div>

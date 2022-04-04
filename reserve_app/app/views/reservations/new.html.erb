@@ -1,0 +1,60 @@
+<h2>予約ページ</h2>
+
+<div class="resevation-container outer">
+  <div class="room-info-box flex-col">
+    <div>
+      <h3><%= @room.room_name %></h3>
+    </div>
+    <div>
+      <%= image_tag @room.room_image.url, class:"room-image" %>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>紹介</th>
+          <td>
+            <%= @room.introduction %>
+          </td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>
+            <%= @room.address %>
+          </td>
+        </tr>
+        <tr>
+          <th>料金</th>
+          <td>
+            <%= @room.fee %> 円
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="reservation-new-outer flex-col">
+    <%= form_with model:@reservation, local: true do |f| %>
+      <table class="reservation-new">
+        <tr>
+          <th><%= f.label :number_reservations ,"予約人数" %></th>
+          <td><%= f.number_field :number_reservations, value:@reservation.number_reservations, class:"input" %> 人</td>
+        </tr>
+        <tr>
+          <th><%= f.label :check_in ,"チェックイン" %></th>
+          <td><%= f.date_field :check_in, default: @reservation.check_out, class:"input" %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :check_out ,"チェックアウト" %></th>
+          <td><%= f.date_field :check_out, default: @reservation.check_out, class:"input" %></td>
+        </tr>
+      </table>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <%= f.hidden_field :room_id, :value => @room.id %>
+      <%= f.hidden_field :room_name, :value => @room.room_name %>
+      <div class="operation-box"><%= f.submit "予約" %></div>
+    <% end %>
+  </div>
+</div>

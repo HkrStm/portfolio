@@ -1,0 +1,28 @@
+<h2>予約詳細</h2>
+
+<div class="room-container outer flex-col">
+  <% @reservation.each do |r| %>
+    <table>
+      <tr>
+        <th>ルーム名</th>
+        <td><%= link_to(room_path(r.room_id), class:"resevation-link link") do %><%= r.room_name %><% end %></td>
+      </tr>
+      <tr>
+        <th>チェックイン</th>
+        <td><%= r.check_in.strftime("20%y年%m月%d日") %></td>
+      </tr>
+      <tr>
+        <th>チェクアウト</th>
+        <td><%= r.check_out.strftime("20%y年%m月%d日") %></td>
+      </tr>
+      <tr>
+        <th>人数</th>
+        <td><%= r.number_reservations %> 人</td>
+      </tr>
+    </table>
+    <div class="operation-box">
+      <%= link_to("予約変更", edit_reservation_path(r.id), class:"link") %>
+      <%= link_to("予約キャンセル", reservation_path(r.id), data: { confirm: "本当にキャンセルしますか？" }, method: :delete, class:"link") %>
+    </div>
+  <% end %>
+</div>

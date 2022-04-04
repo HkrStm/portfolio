@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/* ヘッダー */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 10px 0;
+  padding: 0;
+  background-color: grey;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-nav li {
+  list-style: none;
+}
+
+li .nav-content {
+  padding-right: 8px;
+  line-height: 5;
+}
+
+.nav-link {
+  margin: 0 5px;
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  padding: 0 20px 0 10px;
+  line-height: 60px;
+}
+
+.header-content {
+  display: flex;
+}
+
+.user-link {
+  margin: auto;
+  color: white;
+  text-decoration: none;
+}
+
+.user-info:hover {
+  opacity: 0.5;
+}
+
+.user-info {
+  display: flex;
+  padding-right: 8px;
+}
+
+.user-icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.search-outer {
+  margin: auto 20px;
+}
+
+/* 共通 */
+
+.link {
+  margin: 0 5px;
+  color: blue;
+  text-decoration: none;
+}
+
+.link:hover, .nav-link:hover {
+  opacity: 0.5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+.outer {
+  width: calc( 100% - 80px );
+  margin: 0 auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 25px 10px;
+}
+
+tr {
+  border: medium solid #130113;
+}
+
+th {
+  width: 140px;
+  text-align: left;
+}
+
+.input {
+  line-height: 20px;
+}
+
+.input-select {
+  height: 25px;
+}
+
+.room-image {
+  height: 300px;
+  width: 400px;
+}
+
+.operation-box {
+  margin: 25px auto;
+  text-align: center;
+}
+
+.form-error {
+  text-align: center;
+  background-color: rgb(189, 189, 189);
+}
+
+/* ルームページ */
+
+.room-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-box {
+  width: 33%;
+}
+
+.room-detail-link {
+  color: black;
+  padding: 0 20px;
+  text-decoration: none;
+}
+
+.room-detail-link:hover {
+  opacity: 0.8;
+  background-color: rgb(189, 189, 189);
+  transition: opacity background-color 0.5s;
+}
+
+h3 {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.image-box {
+  text-align: center;
+}
+
+/* 予約ページ */
+
+.resevation-container {
+  display: flex;
+}
+
+.room-info-box {
+  width: 50%;
+}
+
+.room-info-box div {
+  margin: 0 auto;
+}
+
+.reservation-new-outer {
+  width: 50%;
+}
+
+.reservation-new {
+  border-collapse: separate;
+  border-spacing: 25px 25px;
+}
+
+dl{
+  display:flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  text-align: center;
+}
+
+dt{
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc; 
+  box-sizing: border-box;
+}
+
+dd{
+  width: 70%;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.back-colored {
+  background: #ddd;
+}
+
+.resevation-link {
+  display: block;
+}
+
+.resevation-link:hover {
+  opacity: 0.8;
+  background-color: rgb(189, 189, 189);
+  transition: opacity background-color 0.5s;
+}
+
+/* devise */
+
+.field {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.account-edit {
+  display: flex;
+  justify-content: center;
+}
+
+.account-box {
+  width: 30%;
+}
+
+/* トップ */
+
+.prefecture-box {
+  display: flex;
+  width: 1200px;
+  margin: 50px auto;
+}
+
+.area-link {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  position: relative;
+}
+
+.area-link:hover {
+  opacity: 0.6;
+  transition: 0.7s;
+}
+
+.prefecture-img {
+  height: 420px;
+  width: 240px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.area-title {
+  margin: 0;
+  padding: 2px 8px;
+  background-color: white;
+  color: black;
+  font-size: large;
+  opacity: 0.7;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px;
+  bottom: 6px;
+}

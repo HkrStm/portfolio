@@ -1,0 +1,233 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+.blank {
+    width: 100%;
+    height: 20px;
+}
+
+/* application上部 */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0099cc, #66d9ff);
+}
+
+h1 {
+    margin: 30px;
+    color: white;
+}
+
+.new_link {
+    margin: auto 50px;
+    text-decoration: none;
+    color: white;
+}
+
+.link2:hover, .new_link:hover {
+    opacity: 0.5;
+}
+
+.flash {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px 50px;
+    text-align: center;
+    color: #00661a;
+    background-color: #66ff8c;
+    animation: fadeOut 3s ease-out 1s 1 forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* application下部 */
+
+main {
+    display: flex;
+    width: 100%;
+    background-color:  white;
+}
+
+.side {
+    width: 20%;
+    border-left: solid 20px #8c66ff;
+}
+
+.schedule_link_list {
+    padding: 30px 0 0 20px;
+    list-style: none;
+}
+
+li {
+    position: relative;
+    display: block;
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+.link {
+    position: relative;
+    font-weight: bold;
+    color: #8c66ff;
+    text-decoration: none;
+    z-index: 10;
+    transition: .3s;
+}
+
+li:hover .link{
+    color: white;
+}
+
+li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: #8c66ff;
+    transform: translate3d(-100%, 0, 0);
+    transition: .3s;
+}
+
+li:hover:before {
+    transform: translate3d(0, 0, 0);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #66d9ff, #0099cc);
+}
+
+#show_date,#total {
+    margin: 30px 30px;
+    font-size: 20px;
+    line-height: 35px;
+    color: white;
+}
+
+/* コンテンツ */
+
+h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+table {
+    width: 48%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: solid 3px #004d66;
+}
+
+table th {
+    padding: 5px 20px;
+    background-color: #ccf2ff;
+}
+
+table th,table td {
+    border-bottom: dashed 2px #007399;
+}
+
+td {
+    padding: 8px 10px;
+}
+
+.show_table {
+    padding: 10px;
+}
+
+.show_link {
+    display: block;
+    padding: 10px 15px;
+    color: #007399;
+    text-decoration: none;
+}
+
+.show_link:hover {
+    color: white;
+    background-color: #66d9ff;
+}
+
+.link2 {
+    margin-right: 20px;
+    color: #004d66;
+    text-decoration: none;
+}
+
+.operation_link {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.index_date {
+    text-align: center;    
+}
+
+/* 入力フォーム部 */
+
+.input {
+    width: 98%;
+    font-size: 16px;
+}
+
+.input_textarea {
+    width: 98%;
+    height: 3em;
+    font-size: 16px;
+}
+
+.form_error {
+    margin: 10px 0;
+    text-align: center;
+    color: red;
+}
+
+.submit_btn {
+    margin-top: 20px;
+    text-align: center;
+}

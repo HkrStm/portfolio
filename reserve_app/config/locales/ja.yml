@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        username: 'ユーザー名'
+        introduction: '自己紹介'
+        user_icon: 'ユーザーアイコン'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード'
+        remember_me: '次回から自動的にログイン'
+      room:
+        room_name: 'ルーム名'
+        introduction: 'ルーム紹介'
+        fee: '料金'
+        address: '住所'
+        room_image: 'ルームイメージ'
+      reservation:
+        number_reservations: '予約人数'
+        check_in: 'チェックイン'
+        check_out: 'チェックアウト'
+        total_days: '予約日数'

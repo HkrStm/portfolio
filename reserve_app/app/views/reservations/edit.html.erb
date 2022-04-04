@@ -1,0 +1,26 @@
+<h2>予約変更</h2>
+
+  <div class="outer flex-col">
+    <%= form_with model:@reservation do |f| %>
+      <table class="reservation-new">
+        <tr>
+          <th><%= f.label :number_reservations ,"予約人数" %></th>
+          <td><%= f.number_field :number_reservations, value:@reservation.number_reservations, class:"input" %> 人</td>
+        </tr>
+        <tr>
+          <th><%= f.label :check_in ,"チェックイン" %></th>
+          <td><%= f.date_field :check_in, default: @reservation.check_out, class:"input" %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :check_out ,"チェックアウト" %></th>
+          <td><%= f.date_field :check_out, default: @reservation.check_out, class:"input" %></td>
+        </tr>
+      </table>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <div class="operation-box"><%= f.submit "予約" %></div>
+    <% end %>
+  </div>

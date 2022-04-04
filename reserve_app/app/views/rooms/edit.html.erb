@@ -1,0 +1,34 @@
+<h2>ルーム情報変更フォーム</h2>
+
+<div class="outer">
+	<%= form_with model:@room do |r| %>
+		<table>
+			<tr>
+				<th><%= r.label :room_name ,"ルーム名" %></th>
+				<td><%= r.text_field :room_name, value:@room.room_name, class:"input" %></td>
+			</tr>
+			<tr>
+				<th><%= r.label :introduction ,"紹介" %></th>
+				<td><%= r.text_area :introduction, default: @room.introduction, class:"" %></td>
+			</tr>
+			<tr>
+				<th><%= r.label :fee ,"料金" %></th>
+				<td><%= r.number_field :fee, default: @room.fee, class:"input" %> 円</td>
+			</tr>
+			<tr>
+				<th><%= r.label :address ,"住所" %></th>
+				<td><%= r.text_field :address, value:@room.address, class:"input" %></td>
+			</tr>
+			<tr>
+				<th><%= r.label :room_image ,"イメージ" %></th>
+				<td><%= r.file_field :room_image, de:@room.room_image, class:"input" %></td>
+			</tr>
+		</table>
+		<% @room.errors.full_messages.each do |message| %>
+			<div class="form-error">
+        <%= message %>
+			</div>
+    <% end %>
+		<div class="operation-box"><%= r.submit "変更" %></div>
+	<% end %>
+</div>

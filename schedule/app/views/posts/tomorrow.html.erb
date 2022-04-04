@@ -1,0 +1,16 @@
+<h3>明日のスケジュール一覧</h3>
+
+<table>
+    <tr>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+    </tr>
+    <% @posts.each do |post| %>
+        <tr>
+            <td><%= link_to post.title, post_path(post.id), class:"show_link" %></td>
+            <td class="index_date"><%= post.start_day.strftime("%m月%d日") %></td>
+            <td class="index_date"><%= post.end_day.strftime("%m月%d日") %></td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,44 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+    <tr>
+        <th>タイトル</th>
+        <td class="show_table">
+            <%= @post.title %>
+        </td>
+    </tr>
+    <tr>
+        <th>開始日</th>
+        <td class="show_table">
+            <%= @post.start_day.strftime("20%y年%m月%d日") %>
+        </td>
+    </tr>
+    <tr>
+        <th>終了日</th>
+        <td class="show_table">
+            <%= @post.end_day.strftime("20%y年%m月%d日") %>
+        </td>
+    </tr>
+    <tr>
+        <th>終日</th>
+        <td class="show_table">
+            <%= @check_allday %>&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th>備考</th>
+        <td class="show_table">
+            <%= @post.memo %>&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th>更新日時</th>
+        <td class="show_table">
+            <%= @post.updated_at.strftime("20%y年%m月%d日 %H:%M") %>
+        </td>
+    </tr>
+</table>
+<div class="operation_link">
+    <%= link_to("編集", edit_post_path(@post.id), class:"link2") %>
+    <%= link_to("削除", post_path(@post.id), method: :delete, class:"link2") %>
+</div>

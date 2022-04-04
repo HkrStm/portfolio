@@ -1,0 +1,78 @@
+.outer{
+	width: 400px;
+	height: 530px;
+	background-color: #D4CFC9;
+	border: solid;
+	border-width: 5px;
+	border-radius: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.center_width{
+	width: 350px;
+	margin: 30px auto;
+}
+
+#display{
+	background-color: #BAD3D0;
+	border: groove;
+	border-radius: 10px;
+	text-align: right;
+	font-size: 2.3em;
+	line-height: 2em;
+	overflow: hidden;
+	padding-right: 10px;
+	margin: 45px 15px;
+}
+
+.btn_part{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.upper_btn{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.lower_btn{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.btn, .btn_c, .btn_equal{
+	width: 70px;
+	height: 55px;
+	font-size: 1.5em;
+	text-align: center;
+	border: solid;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.btn:hover{
+	opacity: 0.7;
+	transition: 0.4s;
+}
+
+.btn2{
+	width: 140px;
+}
+
+.btn_operator, .btn_equal{
+	font-size: 1.8em;
+}
+
+.btn_point{
+	font-size: 2em;
+	margin-left: 15px;
+}
+
+.btn_c{
+	margin-right: 25px;
+}

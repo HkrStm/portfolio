@@ -1,0 +1,20 @@
+<h2>ルーム一覧</h2>
+
+<div class="room-container outer">
+  <% @rooms.each do |room| %>
+    <div class="room-box flex-col">
+      <%= link_to(room_path(room.id), class:"room-detail-link") do %>
+        <div>
+          <h3><%= room.room_name %></h3>
+        </div>
+        <div>
+          <%= image_tag room.room_image.url, class:"room-image" %>
+          <div>
+            <p>　　　　住所：<%= room.address %></p>
+            <p>　　　　料金：<%= room.fee %>円</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

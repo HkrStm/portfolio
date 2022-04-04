@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha384-S58meLBGKxIiQmJ/pJ8ilvFUcGcqgla+mWH9EEKGm6i6rKxSTA2kpXJQJ8n7XK4w" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="calculator.css">
+    <title>Javascript_実践課題２ 電卓</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>電卓</h1>
+      
+      <div class="outer">
+        <div class="center_width">
+          <div id="display">0</div>
+          
+          <div class="btn_part">
+            <div class="upper_btn">
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">7</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">8</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">9</button>
+              <button type="button" class="btn btn_operator" onclick="operators(this)">/</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">4</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">5</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">6</button>
+              <button type="button" class="btn btn_operator" onclick="operators(this)">*</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">1</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">2</button>
+              <button type="button" class="btn btn_number" onclick="clickbutton(this)">3</button>
+              <button type="button" class="btn btn_operator" onclick="operators(this)">-</button>
+            </div>
+            <div class="lower_btn">
+              <button type="button" class="btn btn2 btn_number" onclick="clickbutton(this)">0</button>
+              <button type="button" class="btn btn_number btn_point" onclick="operators(this)">.</button>
+              <button type="button" class="btn btn_operator" onclick="operators(this)">+</button>
+              <button type="button" Class="btn2 btn_c" onclick="clickbutton(this)">C</button>
+              <button type="button" class="btn2 btn_equal" onclick="clickbutton(this)">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    <script type="text/javascript" src="calculator.js"></script>
+  </body>
+</html>

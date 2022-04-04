@@ -1,0 +1,28 @@
+<div class="outer">
+  <div class="prefecture-box">
+    <div class="area-link">
+      <%= link_to controller: "rooms", action: "search", q: { address_cont: '北海道' } do %>
+        <img src="/assets/hokkaido.jpeg" class="prefecture-img" alt="エリアイメージ" %>
+        <p class="area-title">北海道</p>
+      <% end %>
+    </div>
+    <div class="area-link">
+      <%= link_to controller: "rooms", action: "search", q: { address_cont: '東京都' } do %>
+      <img src="/assets/tokyo.jpeg" class="prefecture-img" alt="エリアイメージ" %>
+      <p class="area-title">東京都</p>
+      <% end %>
+    </div>
+    <div class="area-link">
+      <%= link_to controller: "rooms", action: "search", q: { address_cont: '京都府' } do %>
+      <img src="/assets/kyoto.jpeg" class="prefecture-img" alt="エリアイメージ" %>
+      <p class="area-title">京都府</p>
+      <% end %>
+    </div>
+    <div class="area-link">
+      <%= link_to controller: "rooms", action: "search", q: { address_cont: '沖縄県' } do %>
+      <img src="/assets/okinawa.jpeg" class="prefecture-img" alt="エリアイメージ" %>
+      <p class="area-title">沖縄県</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h2>予約一覧</h2>
+
+<div class="outer">
+  <dl>
+    <dt class="back-colored">予約ID</dt>
+    <dd class="back-colored">ルーム名</dd>
+    <% @reservations.each do |r| %>
+      <dt><%= r.id %></dt>
+      <dd>
+        <%= link_to(reservation_path(r.id), class:"resevation-link link") do %>
+          <%= r.room_name %>
+        <% end %>
+      </dd>
+    <% end %>
+</dl>
+</div>
